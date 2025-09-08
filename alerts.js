@@ -86,7 +86,7 @@
 
     // DOM manipulation functions
     function createAlertElement(alert) {
-        var alertDiv = document.createElement('div');
+        var alertDiv = document.createElement('div'); //Creates a new <div> element for each expense category
         alertDiv.className = 'alert-item critical';
         
         alertDiv.innerHTML = 
@@ -118,11 +118,11 @@
     }
 
     function populateAlerts() {
-        var container = document.getElementById('critical-alerts');
+        var container = document.getElementById('critical-alerts'); //DOM table Id from html code
         
         for (var i = 0; i < criticalAlerts.length; i++) {
             var alertElement = createAlertElement(criticalAlerts[i]);
-            container.appendChild(alertElement);
+            container.appendChild(alertElement); //Makes it visible on the webpage
         }
     }
 
@@ -140,7 +140,7 @@
                 '<td>' + member.location + '</td>' +
                 '<td><button class="alert-button" onclick="contactMember(\'' + member.role + '\')">Contact</button></td>';
             
-            tableBody.appendChild(row);
+            tableBody.appendChild(row); //Makes it visible on the webpage
         }
     }
 
@@ -158,30 +158,29 @@
                 '<td><strong>' + unit.occupancy + '</strong></td>' +
                 '<td>' + unit.status + '</td>';
             
-            tableBody.appendChild(row);
-        }
+            tableBody.appendChild(row); //Makes it visible on the webpage
+        } 
     }
 
     // Event handling functions
     function acknowledgeAlert(alertId) {
-        var buttons = document.querySelectorAll('button[onclick*="' + alertId + '"]');
-        
-        for (var i = 0; i < buttons.length; i++) {
-            if (buttons[i].textContent === 'Acknowledge') {
+        var buttons = document.querySelectorAll('button[onclick*="' + alertId + '"]'); //Finds buttons related to a specific alert ID
+        for (var i = 0; i < buttons.length; i++) { //Locates the "Acknowledge" button for that alert
+            if (buttons[i].textContent === 'Acknowledge') { //Updates the button to show it's been acknowledged
                 buttons[i].textContent = 'Acknowledged';
                 buttons[i].style.backgroundColor = '#48bb78';
-                buttons[i].disabled = true;
+                buttons[i].disabled = true; 
                 break;
             }
         }
         
-        showMessage('Alert ' + alertId + ' acknowledged');
+        showMessage('Alert ' + alertId + ' acknowledged'); //Shows confirmation message to the user
     }
 
     function escalateAlert(alertId) {
-        var buttons = document.querySelectorAll('button[onclick*="' + alertId + '"]');
+        var buttons = document.querySelectorAll('button[onclick*="' + alertId + '"]'); //Similar to acknowledge, but for escalation
         
-        for (var i = 0; i < buttons.length; i++) {
+        for (var i = 0; i < buttons.length; i++) { //Changes button to "Escalated"
             if (buttons[i].textContent === 'Escalate') {
                 buttons[i].textContent = 'Escalated';
                 buttons[i].style.backgroundColor = '#e53e3e';
@@ -190,10 +189,10 @@
             }
         }
         
-        showMessage('Alert ' + alertId + ' escalated to supervisor');
+        showMessage('Alert ' + alertId + ' escalated to supervisor'); //Notifies that supervisor has been contacted
     }
 
-    function resolveAlert(alertId) {
+    function resolveAlert(alertId) { //Similar to acknowledge, but for resoloving
         var alertItems = document.querySelectorAll('.alert-item');
         
         for (var i = 0; i < alertItems.length; i++) {
@@ -211,7 +210,7 @@
             }
         }
         
-        showMessage('Alert ' + alertId + ' resolved');
+        showMessage('Alert ' + alertId + ' resolved'); //Shows confirmation message
     }
 
     function contactMember(role) {
@@ -223,7 +222,7 @@
     }
 
     // Basic logic functions
-    function showMessage(text) {
+    function showMessage(text) { // to pop up the notification/text that is resolved notification
         var messageDiv = document.createElement('div');
         messageDiv.textContent = text;
         messageDiv.style.cssText = 
@@ -237,20 +236,11 @@
         }, 3000);
     }
 
-    function updateAlertCounts() {
-        var criticalAlerts = document.querySelectorAll('.alert-item.critical').length;
-        var criticalCountElement = document.querySelector('.alert-count.critical');
-        
-        if (criticalCountElement) {
-            criticalCountElement.textContent = criticalAlerts + ' Critical';
-        }
-    }
-
-    function goBack() {
+    function goBack() { //This is a method that navigates to the previous page in the history.
         window.history.back();
     }
 
-    // Initialize when page loads
+// Initialize dashboard when page loads
     document.addEventListener('DOMContentLoaded', function() {
         populateAlerts();
         populateResponseTeam();

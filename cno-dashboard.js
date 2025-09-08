@@ -36,27 +36,28 @@ const staffingData = [
     }
     
 ];
-
+// This function is used for to taken physician data from an array and creates table rows to display information about each physician in a structured format.
     function populateStaffingTable() {
-        const tableBody = document.getElementById('staffing-table');
+        const tableBody = document.getElementById('staffing-table'); //DOM physician table Id from html code
         
-        staffingData.forEach(unit => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
+        staffingData.forEach(unit => { //Data appears to be an array containing physician objects
+            const row = document.createElement('tr'); //creates a new HTML table row element, This row isn't yet visible on the page, it exists only in memory
+            row.innerHTML = //inserts the value of each physician property `(${unit.property}` is template literal syntax)
+            `
                 <td>${unit.unit}</td>
                 <td>${unit.budgeted}</td>
                 <td>${unit.actual}</td>
                 <td>${unit.ratio}</td>
                 <td>${unit.overtime}</td>
             `;
-            tableBody.appendChild(row);
+            tableBody.appendChild(row); //appendChild() adds the newly created row to the table element, This makes the row visible on the webpage
         });
     }
 
-    function goBack() {
+    function goBack() { //This is a method that navigates to the previous page in the history.
         window.history.back();
     }
-
+// Initialize dashboard when page loads
     document.addEventListener('DOMContentLoaded', function() {
         populateStaffingTable();
     });

@@ -32,25 +32,26 @@
             satisfaction: "4.4/5.0"
         }
     ];
-
+    // This function is used for to taken physician data from an array and creates table rows to display information about each physician in a structured format.
     function populatePhysicianTable() {
-        const tableBody = document.getElementById('physician-table');
+        const tableBody = document.getElementById('physician-table'); //DOM physician table Id from html code
         
-        physicianData.forEach(physician => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${physician.name}</td>
+        physicianData.forEach(physician => { //Data appears to be an array containing physician objects
+            const row = document.createElement('tr'); //creates a new HTML table row element, This row isn't yet visible on the page, it exists only in memory
+            row.innerHTML = //inserts the value of each physician property `(${physician.property}` is template literal syntax)
+            `
+                <td>${physician.name}</td> 
                 <td>${physician.specialty}</td>
                 <td>${physician.volume}</td>
                 <td>${physician.los}</td>
                 <td>${physician.quality}</td>
                 <td>${physician.satisfaction}</td>
             `;
-            tableBody.appendChild(row);
+            tableBody.appendChild(row); //appendChild() adds the newly created row to the table element, This makes the row visible on the webpage
         });
     }
 
-    function goBack() {
+    function goBack() { //This is a method that navigates to the previous page in the history.
         window.history.back();
     }
 

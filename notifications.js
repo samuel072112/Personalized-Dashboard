@@ -112,8 +112,8 @@
         }
     ];
 
-    // DOM manipulation functions
-    function createNotificationElement(notification) {
+    // DOM manipulation functions: create and populate the visual elements on the page
+    function createNotificationElement(notification) { //Builds individual notification cards
         var notificationDiv = document.createElement('div');
         notificationDiv.className = 'notification-item ' + notification.category;
         
@@ -134,7 +134,7 @@
         return notificationDiv;
     }
 
-    function populateNotifications() {
+    function populateNotifications() { //Fills the notifications container with all notification cards
         var container = document.getElementById('notifications-list');
         container.innerHTML = '';
         
@@ -144,7 +144,7 @@
         }
     }
 
-    function populateIncidentsTable() {
+    function populateIncidentsTable() { //Create data tables for incidents and budget information
         var tableBody = document.getElementById('incidents-table');
         
         for (var i = 0; i < incidentData.length; i++) {
@@ -165,7 +165,7 @@
         }
     }
 
-    function populateBudgetTable() {
+    function populateBudgetTable() { //Create data tables for incidents and budget information
         var tableBody = document.getElementById('budget-table');
         
         for (var i = 0; i < budgetData.length; i++) {
@@ -186,7 +186,7 @@
     }
 
     // Event handling functions
-    function filterNotifications(category) {
+    function filterNotifications(category) { //Shows/hides notifications based on selected category
         var filterButtons = document.querySelectorAll('.filter-btn');
         var notificationItems = document.querySelectorAll('.notification-item');
         
@@ -216,7 +216,7 @@
         updateNotificationCounts();
     }
 
-    function viewNotification(notificationId) {
+    function viewNotification(notificationId) { //Creates a modal popup showing detailed notification information
         var notification = null;
         
         for (var i = 0; i < notifications.length; i++) {
@@ -258,7 +258,7 @@
         }
     }
 
-    function closeDetailView() {
+    function closeDetailView() { //Creates a modal popup showing detailed notification information
         var detailDiv = document.querySelector('div[style*="position: fixed"][style*="transform: translate(-50%, -50%)"]');
         var overlay = document.getElementById('detail-overlay');
         
@@ -270,7 +270,7 @@
         }
     }
 
-    function dismissNotification(notificationId) {
+    function dismissNotification(notificationId) { //Removes notifications with a smooth animation
         var notificationItems = document.querySelectorAll('.notification-item');
         
         for (var i = 0; i < notificationItems.length; i++) {
@@ -301,7 +301,7 @@
     }
 
     // Basic logic functions
-    function updateNotificationCounts() {
+    function updateNotificationCounts() { //view details pop-up related
         var visibleNotifications = document.querySelectorAll('.notification-item[style*="display: block"], .notification-item:not([style*="display: none"])');
         var qualityCount = 0;
         var financialCount = 0;
@@ -324,7 +324,7 @@
         }
     }
 
-    function showMessage(text) {
+    function showMessage(text) { //to pop up the notification/text that is notification
         var messageDiv = document.createElement('div');
         messageDiv.textContent = text;
         messageDiv.style.cssText = 
@@ -340,7 +340,7 @@
         }, 3000);
     }
 
-    function goBack() {
+    function goBack() { //This is a method that navigates to the previous page in the history.
         window.history.back();
     }
 
@@ -352,26 +352,3 @@
         updateNotificationCounts();
     });
 
-    // Simple refresh functionality
-    function refreshNotifications() {
-        showMessage('Refreshing notifications...');
-        
-        setTimeout(function() {
-            populateNotifications();
-            updateNotificationCounts();
-            showMessage('Notifications updated');
-        }, 1000);
-    }
-
-    // Add refresh button functionality (if you want to add a refresh button to HTML)
-    function addRefreshButton() {
-        var header = document.querySelector('.dashboard-header');
-        var refreshButton = document.createElement('button');
-        refreshButton.textContent = 'Refresh';
-        refreshButton.style.cssText = 
-            'padding: 8px 16px; background: #4299e1; color: white; border: none; ' +
-            'border-radius: 6px; cursor: pointer; margin-top: 10px;';
-        refreshButton.onclick = refreshNotifications;
-        
-        header.appendChild(refreshButton);
-    }
