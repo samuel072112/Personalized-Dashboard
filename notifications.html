@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="stylesheet" href="notifications-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="back-button" onclick="goBack()">&larr; Back to Main Dashboard</button>
+        
+        <div class="dashboard-header">
+            <h1>Notifications Dashboard</h1>
+            <p>General Notifications & System Updates</p>
+            <div class="notification-summary">
+                <span class="notification-count info">8 New</span>
+                <span class="notification-count warning">3 Warnings</span>
+                <span class="notification-count success">5 Updates</span>
+            </div>
+        </div>
+
+        <!-- Notification Filters -->
+        <div class="filter-section">
+            <h3>Filter Notifications</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterNotifications('all')">All</button>
+                <button class="filter-btn" onclick="filterNotifications('quality')">Quality</button>
+                <button class="filter-btn" onclick="filterNotifications('financial')">Financial</button>
+                <button class="filter-btn" onclick="filterNotifications('compliance')">Compliance</button>
+                <button class="filter-btn" onclick="filterNotifications('safety')">Safety</button>
+            </div>
+        </div>
+
+        <!-- Performance Metrics Overview -->
+        <div class="metrics-grid">
+            <div class="metric-card info-card">
+                <h3><i class="fas fa-chart-bar"></i> Quality Metrics</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Patient Satisfaction:</span>
+                    <span class="metric-value warning-value">3.8/5.0 <span class="metric-trend trend-warning">Below Target</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">30-Day Readmission Rate:</span>
+                    <span class="metric-value warning-value">11.2% <span class="metric-trend trend-warning">Above Target</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Infection Rate:</span>
+                    <span class="metric-value warning-value">2.8/1000 <span class="metric-trend trend-warning">Alert</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card warning-card">
+                <h3><i class="fas fa-dollar-sign"></i> Financial Performance</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Budget Variance:</span>
+                    <span class="metric-value warning-value">+10.7% <span class="metric-trend trend-warning">Over Budget</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Days Sales Outstanding:</span>
+                    <span class="metric-value warning-value">45 days <span class="metric-trend trend-warning">Above Target</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Collection Rate:</span>
+                    <span class="metric-value warning-value">91.5% <span class="metric-trend trend-warning">Below Target</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card success-card">
+                <h3><i class="fas fa-clipboard-check"></i> Compliance Status</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Joint Commission:</span>
+                    <span class="metric-value warning-value">94% <span class="metric-trend trend-warning">Warning</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">OSHA Safety:</span>
+                    <span class="metric-value success-value">97% <span class="metric-trend trend-success">Compliant</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Training Completion:</span>
+                    <span class="metric-value warning-value">88% <span class="metric-trend trend-warning">Below Target</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notifications List -->
+        <div class="notifications-section">
+            <h3>Recent Notifications</h3>
+            <div id="notifications-list" class="notifications-container">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Incident Reports Summary -->
+        <div class="chart-container">
+            <h3>Patient Safety Events Summary</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Event Type</th>
+                        <th>This Month</th>
+                        <th>Last Month</th>
+                        <th>Trend</th>
+                        <th>Severity</th>
+                    </tr>
+                </thead>
+                <tbody id="incidents-table">
+                    <!-- Data populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Department Performance Summary -->
+        <div class="chart-container">
+            <h3>Department Budget Performance</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Department</th>
+                        <th>Budget</th>
+                        <th>Actual</th>
+                        <th>Variance</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="budget-table">
+                    <!-- Data populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="notifications.js"></script>
+</body>
+</html>

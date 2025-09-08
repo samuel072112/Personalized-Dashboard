@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Manager Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="back-button" onclick="goBack()">&larr; Back to Main Dashboard</button>
+        
+        <div class="dashboard-header">
+            <h1>Department Manager Dashboard</h1>
+            <p>Emergency Department - Operational Performance</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Operational Performance</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Daily Patient Volume:</span>
+                    <span class="metric-value">285 patients <span class="metric-trend trend-up">↑ 12%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Average Length of Stay:</span>
+                    <span class="metric-value">3.8 hours</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Left Without Being Seen:</span>
+                    <span class="metric-value">2.8% <span class="metric-trend trend-down">↓ 0.5%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Ambulance Diversion Hours:</span>
+                    <span class="metric-value">4 hours this month</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Quality Metrics</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Door-to-Provider Time:</span>
+                    <span class="metric-value">28 minutes</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Pain Assessment (30 min):</span>
+                    <span class="metric-value">94.5%</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Sepsis Bundle Compliance:</span>
+                    <span class="metric-value">96.2% <span class="metric-trend trend-up">↑ 2.1%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Patient Satisfaction:</span>
+                    <span class="metric-value">3.9/5.0 <span class="metric-trend trend-up">↑ 0.2</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Productivity Indicators</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Patients per RN per Shift:</span>
+                    <span class="metric-value">12.8</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Patients per Physician/Hour:</span>
+                    <span class="metric-value">2.4</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Registration Time:</span>
+                    <span class="metric-value">8.2 minutes</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Discharge Processing:</span>
+                    <span class="metric-value">22 minutes</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Budget Performance</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Monthly Budget Status:</span>
+                    <span class="metric-value">98.2% utilized</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Labor Variance:</span>
+                    <span class="metric-value">+$12K <span class="metric-trend trend-up">+2.1%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Supply Variance:</span>
+                    <span class="metric-value">-$3K <span class="metric-trend trend-down">-1.8%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Revenue per Patient:</span>
+                    <span class="metric-value">$1,245</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Staff Scheduling Overview</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Scheduled FTEs</th>
+                        <th>Actual FTEs</th>
+                        <th>Overtime Hours</th>
+                        <th>Productivity</th>
+                    </tr>
+                </thead>
+                <tbody id="scheduling-table">
+                    <!-- Data populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart-container">
+            <h3>Daily Volume Trends</h3>
+            <div id="volume-chart">
+                <!-- Volume chart will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="dm-dashboard.js"></script>
+</body>
+</html>

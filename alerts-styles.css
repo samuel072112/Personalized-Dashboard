@@ -1,0 +1,266 @@
+.alert-summary {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.alert-count {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.alert-count.critical {
+    background: #fed7d7;
+    color: #c53030;
+    border: 2px solid #e53e3e;
+}
+
+.alert-count.high {
+    background: #feebc8;
+    color: #c05621;
+    border: 2px solid #ed8936;
+}
+
+.alert-count.medium {
+    background: #bee3f8;
+    color: #2c5282;
+    border: 2px solid #3182ce;
+}
+
+/* Alert Section */
+.alert-section {
+    margin: 20px 0;
+}
+
+.alert-section h2 {
+    color: #e53e3e;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alerts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alert-item {
+    background: white;
+    border-left: 5px solid;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-out;
+}
+
+.alert-item.critical {
+    border-left-color: #e53e3e;
+    background: linear-gradient(90deg, #fed7d7 0%, white 10%);
+}
+
+.alert-item.high {
+    border-left-color: #ed8936;
+    background: linear-gradient(90deg, #feebc8 0%, white 10%);
+}
+
+.alert-item.medium {
+    border-left-color: #3182ce;
+    background: linear-gradient(90deg, #bee3f8 0%, white 10%);
+}
+
+.alert-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.alert-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+.alert-time {
+    font-size: 12px;
+    color: #718096;
+    background: #f7fafc;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.alert-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.alert-detail {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 0;
+}
+
+.alert-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.alert-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.alert-button.acknowledge {
+    background: #48bb78;
+    color: white;
+}
+
+.alert-button.acknowledge:hover {
+    background: #38a169;
+}
+
+.alert-button.escalate {
+    background: #ed8936;
+    color: white;
+}
+
+.alert-button.escalate:hover {
+    background: #dd6b20;
+}
+
+.alert-button.resolve {
+    background: #4299e1;
+    color: white;
+}
+
+.alert-button.resolve:hover {
+    background: #3182ce;
+}
+
+/* Enhanced Metric Cards for Alerts */
+.critical-card {
+    border-left: 5px solid #e53e3e;
+    background: linear-gradient(135deg, #fed7d7 0%, white 20%);
+}
+
+.warning-card {
+    border-left: 5px solid #ed8936;
+    background: linear-gradient(135deg, #feebc8 0%, white 20%);
+}
+
+.critical-card h3 {
+    color: #c53030;
+    font-size: 19px;
+}
+
+.warning-card h3 {
+    color: #c05621;
+}
+
+/* Critical Values */
+.critical-value {
+    color: #e53e3e !important;
+    font-weight: bold;
+}
+
+.warning-value {
+    color: #ed8936 !important;
+    font-weight: bold;
+}
+
+.trend-critical {
+    background: #e53e3e !important;
+    color: white !important;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.trend-warning {
+    background: #ed8936 !important;
+    color: white !important;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Status Indicators in Tables */
+.status-critical {
+    background: #e53e3e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-warning {
+    background: #ed8936;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-normal {
+    background: #48bb78;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-available {
+    color: #38a169;
+    font-weight: bold;
+}
+
+.status-busy {
+    color: #ed8936;
+    font-weight: bold;
+}
+
+.status-unavailable {
+    color: #e53e3e;
+    font-weight: bold;
+}
+
+
+/* Animations */
+@keyframes flash {
+    0%, 50% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+

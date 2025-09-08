@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Health Management Dashboard</h1>
+            <p>Healthcare Analytics & Management</p>
+        </header>
+
+        <main class="dashboard">
+            <div class="dashboard-grid">
+                <!-- CMO Block -->
+                <div class="dashboard-block cmo-block" onclick="navigateTo('cmo-dashboard.html')" role="button" tabindex="0">
+                    <div class="block-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="block-content">
+                        <h3>CMO</h3>
+                        <p>Chief Medical Officer</p>
+                        <span class="block-subtitle">(Medical Operations & Strategy)</span>
+                    </div>
+                    <div class="block-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- CNO Block -->
+                <div class="dashboard-block cno-block" onclick="navigateTo('cno-dashboard.html')" role="button" tabindex="0">
+                    <div class="block-icon">
+                        <i class="fas fa-user-nurse"></i>
+                    </div>
+                    <div class="block-content">
+                        <h3>CNO</h3>
+                        <p>Chief Nursing Officer</p>
+                        <span class="block-subtitle">(Nursing Operations & Quality)</span>
+                    </div>
+                    <div class="block-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- CFO Block -->
+                <div class="dashboard-block cfo-block" onclick="navigateTo('cfo-dashboard.html')" role="button" tabindex="0">
+                    <div class="block-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="block-content">
+                        <h3>CFO</h3>
+                        <p>Chief Financial Officer</p>
+                        <span class="block-subtitle">(Financial Analytics & Planning)</span>
+                    </div>
+                    <div class="block-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- DM Block -->
+                <div class="dashboard-block dm-block" onclick="navigateTo('dm-dashboard.html')" role="button" tabindex="0">
+                    <div class="block-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="block-content">
+                        <h3>DM</h3>
+                        <p>Department Manager</p>
+                        <span class="block-subtitle">(Department Operations)</span>
+                    </div>
+                    <div class="block-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Alerts Block -->
+                <div class="dashboard-block alerts-block" onclick="navigateTo('alerts.html')" role="button" tabindex="0">
+                    <div class="block-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="block-content">
+                        <h3>Alerts</h3>
+                        <p>System Alerts</p>
+                        <span class="block-subtitle">(Critical Notifications)</span>
+                    </div>
+                    <div class="block-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- Notifications Block -->
+                <div class="dashboard-block notifications-block" onclick="navigateTo('notifications.html')" role="button" tabindex="0">
+                    <div class="block-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="block-content">
+                        <h3>Notifications</h3>
+                        <p>General Notifications</p>
+                        <span class="block-subtitle">(Updates & Messages)</span>
+                    </div>
+                    <div class="block-arrow">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Health Management System. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

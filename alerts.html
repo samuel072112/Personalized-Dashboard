@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critical Alerts Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="stylesheet" href="alerts-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="back-button" onclick="goBack()">&larr; Back to Main Dashboard</button>
+        
+        <div class="dashboard-header">
+            <h1>Critical Alerts Dashboard</h1>
+            <p>Real-Time System Alerts & Emergency Notifications</p>
+            <div class="alert-summary">
+                <span class="alert-count critical">5 Critical</span>
+                <span class="alert-count high">12 High</span>
+                <span class="alert-count medium">8 Medium</span>
+            </div>
+        </div>
+
+        <!-- Active Critical Alerts -->
+        <div class="alert-section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Active Critical Alerts</h2>
+            <div id="critical-alerts" class="alerts-container">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Code Blue/Rapid Response -->
+        <div class="metrics-grid">
+            <div class="metric-card critical-card">
+                <h3><i class="fas fa-heartbeat"></i> Code Blue/Rapid Response</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Active Code Blue Events:</span>
+                    <span class="metric-value critical-value">2 <span class="metric-trend trend-critical">ACTIVE</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Rapid Response Calls Today:</span>
+                    <span class="metric-value">8 calls</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Average Response Time:</span>
+                    <span class="metric-value">2.3 minutes <span class="metric-trend trend-up"><3 min</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Code Blue Survival Rate:</span>
+                    <span class="metric-value">78% <span class="metric-trend trend-neutral">Last 30 days</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card critical-card">
+                <h3><i class="fas fa-bed"></i> Bed Capacity Alert</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Hospital Occupancy:</span>
+                    <span class="metric-value critical-value">95.8% <span class="metric-trend trend-critical">CRITICAL</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Available Beds:</span>
+                    <span class="metric-value critical-value">19 beds <span class="metric-trend trend-critical">of 450</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">ED Holds:</span>
+                    <span class="metric-value warning-value">14 patients</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">ICU Status:</span>
+                    <span class="metric-value critical-value">100% <span class="metric-trend trend-critical">FULL</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card warning-card">
+                <h3><i class="fas fa-user-nurse"></i> Staffing Shortage</h3>
+                <div class="metric-item">
+                    <span class="metric-label">ICU Nursing Ratio:</span>
+                    <span class="metric-value critical-value">1:2.5 <span class="metric-trend trend-critical">-3 RNs</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Med/Surg Ratio:</span>
+                    <span class="metric-value critical-value">1:8.2 <span class="metric-trend trend-critical">-3 RNs</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Emergency Ratio:</span>
+                    <span class="metric-value warning-value">1:3.3 <span class="metric-trend trend-warning">-1 RN</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Physician Coverage:</span>
+                    <span class="metric-value warning-value">Emergency: 2/3</span>
+                </div>
+            </div>
+
+            <div class="metric-card critical-card">
+                <h3><i class="fas fa-tools"></i> Equipment Failures</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Critical Equipment Down:</span>
+                    <span class="metric-value critical-value">2 units <span class="metric-trend trend-critical">FAILED</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Ventilator VT-205:</span>
+                    <span class="metric-value critical-value">ICU-12 <span class="metric-trend trend-critical">FAILED</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Cardiac Monitor:</span>
+                    <span class="metric-value critical-value">CCU-8 <span class="metric-trend trend-critical">ALARM</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Overdue Maintenance:</span>
+                    <span class="metric-value warning-value">8 devices</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Response Team Status -->
+        <div class="chart-container">
+            <h3>Response Team Availability</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Team Member</th>
+                        <th>Response Time</th>
+                        <th>Status</th>
+                        <th>Location</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="response-team-table">
+                    <!-- Data populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Unit Occupancy Status -->
+        <div class="chart-container">
+            <h3>Unit Occupancy Status</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Total Beds</th>
+                        <th>Occupied</th>
+                        <th>Occupancy %</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="occupancy-table">
+                    <!-- Data populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="alerts.js"></script>
+</body>
+</html>

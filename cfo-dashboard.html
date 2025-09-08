@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFO Dashboard - Healthcare Analytics</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="back-button" onclick="goBack()">&larr; Back to Main Dashboard</button>
+        
+        <div class="dashboard-header">
+            <h1>Chief Financial Officer Dashboard</h1>
+            <p>Revenue Cycle Performance & Financial Analytics</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Revenue Cycle Performance</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Net Patient Revenue:</span>
+                    <span class="metric-value">$52.8M <span class="metric-trend trend-up">↑ 8.2%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Gross Collection Rate:</span>
+                    <span class="metric-value">94.7% <span class="metric-trend trend-up">↑ 1.3%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Days Sales Outstanding:</span>
+                    <span class="metric-value">38.2 days <span class="metric-trend trend-down">↓ 2.8</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Bad Debt Rate:</span>
+                    <span class="metric-value">2.1%</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Cost Management</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Cost per Adjusted Discharge:</span>
+                    <span class="metric-value">$8,450 <span class="metric-trend trend-down">↓ 3.2%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Cost per Patient Day:</span>
+                    <span class="metric-value">$2,890 <span class="metric-trend trend-up">↑ 1.8%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Labor Cost per Patient Day:</span>
+                    <span class="metric-value">$1,650 <span class="metric-trend trend-up">↑ 2.1%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Supply Cost per Case:</span>
+                    <span class="metric-value">$1,240 <span class="metric-trend trend-down">↓ 4.5%</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Denial Management</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Initial Denial Rate:</span>
+                    <span class="metric-value">6.4% <span class="metric-trend trend-down">↓ 0.8%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Denial Overturn Rate:</span>
+                    <span class="metric-value">78.3% <span class="metric-trend trend-up">↑ 3.2%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Clean Claim Rate:</span>
+                    <span class="metric-value">89.7% <span class="metric-trend trend-up">↑ 2.1%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">A/R >90 Days:</span>
+                    <span class="metric-value">12.8% <span class="metric-trend trend-down">↓ 1.5%</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Capital Equipment ROI</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Annual Capital Budget:</span>
+                    <span class="metric-value">$12.5M</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">YTD Capital Spending:</span>
+                    <span class="metric-value">$8.9M <span class="metric-trend trend-up">71%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Equipment Lease Payments:</span>
+                    <span class="metric-value">$890K monthly</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Value-Based Care Revenue:</span>
+                    <span class="metric-value">$8.7M <span class="metric-trend trend-up">16.5%</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Payer Mix Analysis</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Payer</th>
+                        <th>% of Volume</th>
+                        <th>% of Revenue</th>
+                        <th>Avg Reimbursement</th>
+                        <th>Contract Margin</th>
+                    </tr>
+                </thead>
+                <tbody id="payer-table">
+                    <!-- Data populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart-container">
+            <h3>Operating Expense Analysis</h3>
+            <div id="expense-chart">
+                <!-- Expense breakdown will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="cfo-dashboard.js"></script>
+</body>
+</html>

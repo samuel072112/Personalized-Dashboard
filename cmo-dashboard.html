@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMO Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="back-button" onclick="goBack()">&larr; Back to Main Dashboard</button>
+        
+        <div class="dashboard-header">
+            <h1>Chief Medical Officer Dashboard</h1>
+            <p>Clinical Quality Metrics & Patient Safety Overview</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Patient Safety Indicators</h3>
+                <div class="metric-item">
+                    <span class="metric-label">HAI Rate:</span>
+                    <span class="metric-value">1.8 per 1,000 days <span class="metric-trend trend-down">↓ 0.3</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Medication Error Rate:</span>
+                    <span class="metric-value">0.6 per 1,000 doses <span class="metric-trend trend-down">↓ 0.2</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Patient Fall Rate:</span>
+                    <span class="metric-value">1.8 per 1,000 days <span class="metric-trend trend-up">↑ 0.3</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Surgical Site Infections:</span>
+                    <span class="metric-value">2.1% of procedures</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Clinical Outcomes</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Risk-Adjusted Mortality:</span>
+                    <span class="metric-value">0.89 <span class="metric-trend trend-down">Below Expected</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">30-Day Readmission Rate:</span>
+                    <span class="metric-value">8.4% <span class="metric-trend trend-down">↓ 1.2%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Sepsis Bundle Compliance:</span>
+                    <span class="metric-value">94.2% <span class="metric-trend trend-up">↑ 2.8%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Stroke Door-to-Needle:</span>
+                    <span class="metric-value">42 minutes</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Medical Staff Status</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Active Medical Staff:</span>
+                    <span class="metric-value">245 physicians</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Current Credentials:</span>
+                    <span class="metric-value">98.8% <span class="metric-trend trend-up">242/245</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Board Certified:</span>
+                    <span class="metric-value">97.1% <span class="metric-trend trend-up">238/245</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">CME Compliance:</span>
+                    <span class="metric-value">96.3%</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Research Portfolio</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Active Clinical Trials:</span>
+                    <span class="metric-value">23 studies</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Patient Enrollment:</span>
+                    <span class="metric-value">347 participants</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Research Revenue:</span>
+                    <span class="metric-value">$2.8M annually</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Publications This Year:</span>
+                    <span class="metric-value">42 articles</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Physician Performance Overview</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Physician</th>
+                        <th>Specialty</th>
+                        <th>Patient Volume</th>
+                        <th>Avg LOS</th>
+                        <th>Quality Score</th>
+                        <th>Satisfaction</th>
+                    </tr>
+                </thead>
+                <tbody id="physician-table">
+                    <!-- Data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="cmo-dashboard.js"></script>
+</body>
+</html>

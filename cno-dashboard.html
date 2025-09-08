@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNO Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <button class="back-button" onclick="goBack()">&larr; Back to Main Dashboard</button>
+        
+        <div class="dashboard-header">
+            <h1>Chief Nursing Officer Dashboard</h1>
+            <p>Nursing-Sensitive Indicators & Staff Performance</p>
+        </div>
+
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h3>Nursing-Sensitive Indicators</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Pressure Ulcer Rate:</span>
+                    <span class="metric-value">0.8% <span class="metric-trend trend-down">↓ 0.3%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Patient Fall Rate:</span>
+                    <span class="metric-value">1.8/1,000 days <span class="metric-trend trend-up">↑ 0.2</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Medication Admin Errors:</span>
+                    <span class="metric-value">0.4/1,000 doses <span class="metric-trend trend-down">↓ 0.1</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Pain Assessment Compliance:</span>
+                    <span class="metric-value">98.5% <span class="metric-trend trend-up">↑ 1.2%</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Patient Satisfaction</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Nurse Communication:</span>
+                    <span class="metric-value">82.4% <span class="metric-trend trend-up">↑ 3.2%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Staff Responsiveness:</span>
+                    <span class="metric-value">78.9% <span class="metric-trend trend-up">↑ 1.8%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Pain Management:</span>
+                    <span class="metric-value">79.6% <span class="metric-trend trend-up">↑ 2.4%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Medication Communication:</span>
+                    <span class="metric-value">75.3% <span class="metric-trend trend-down">↓ 1.1%</span></span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Staffing Overview</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Nursing Hours per Patient Day:</span>
+                    <span class="metric-value">8.4 hours</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Overtime Percentage:</span>
+                    <span class="metric-value">12.8% <span class="metric-trend trend-up">↑ 1.2%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Agency/Travel Usage:</span>
+                    <span class="metric-value">8.5% <span class="metric-trend trend-down">↓ 2.1%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Nurse Utilization Rate:</span>
+                    <span class="metric-value">87.3%</span>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3>Education & Competency</h3>
+                <div class="metric-item">
+                    <span class="metric-label">Annual Competency:</span>
+                    <span class="metric-value">96.8%</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">BLS Certification:</span>
+                    <span class="metric-value">99.2%</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">BSN Degree Completion:</span>
+                    <span class="metric-value">78% <span class="metric-trend trend-up">Target: 80%</span></span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Specialty Certifications:</span>
+                    <span class="metric-value">68% <span class="metric-trend trend-up">↑ 5%</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h3>Staffing Levels by Unit</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Unit</th>
+                        <th>Budgeted FTEs</th>
+                        <th>Actual FTEs</th>
+                        <th>Nurse-to-Patient Ratio</th>
+                        <th>Overtime Hours</th>
+                    </tr>
+                </thead>
+                <tbody id="staffing-table">
+                    <!-- Data populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="cno-dashboard.js"></script>
+</body>
+</html>
