@@ -36,21 +36,20 @@
         addStatusIndicators();
     });
 
-    // Handle page visibility changes
+    // It Handles page visibility changes
     document.addEventListener('visibilitychange', function() {
         if (document.visibilityState === 'visible') {
-            // Reset any loading states when returning to page
+            // it Resets any loading states when returning to page
             resetLoadingStates();
         }
     });
 
-    // Reset loading states
+    // it Resets loading states
     function resetLoadingStates() {
         const blocks = document.querySelectorAll('.dashboard-block');
         blocks.forEach(block => {
             block.style.transform = '';
             block.style.opacity = '';
-            
             const arrow = block.querySelector('.block-arrow i');
             if (arrow && arrow.classList.contains('fa-spinner')) {
                 arrow.className = 'fas fa-chevron-right';
@@ -58,7 +57,7 @@
         });
     }
 
-    // Add error handling
+    // it handle errors- performs two actions: logs the error and resets loading states.
     window.addEventListener('error', function(e) {
         console.error('Navigation error:', e);
         resetLoadingStates();
